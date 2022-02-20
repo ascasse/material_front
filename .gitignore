@@ -35,3 +35,6 @@ yarn-error.log*
 # Local History for Visual Studio Code
 .history/
 
+css/
+*.css.map
+

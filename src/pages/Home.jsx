@@ -9,7 +9,6 @@ const Home = () => {
           <header className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
             <Link to={FrontRoutes.recent}>Learning</Link>
-              {/* <h1>Learning</h1> */}
           </header>
         </div>
       );

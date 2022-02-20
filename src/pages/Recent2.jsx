@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
-import '../recent2.css'
+import '../css/recent.css'
 import API from '../Api'
 
 

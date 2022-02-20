@@ -4,7 +4,7 @@ import axios from "axios";
 
 import API from "../Api";
 import { FrontRoutes } from "../AppRoutes";
-import './ImageViewPage.css'
+import '../css/ImageViewPage.css'
 
 
 const ImageViewPage = ({batch1}) => {
