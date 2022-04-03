@@ -36,6 +36,10 @@ const Recent2 = () => {
       navigate(API.batchImages, { state: { category } });
     }
 
+    const handleTitle = (category) => {
+      navigate(API.batchTitles, { state: { category } });
+    }    
+
     if (error) {
         return <p>{error.message}</p>;
       } else if (!isLoaded) {
@@ -51,6 +55,7 @@ const Recent2 = () => {
                       <span>Last viewed: {category.LastUse != null ? category.LastUse : 'Never'}</span>
                       <span>Bits: {category.Items.length}</span>
                       <button onClick={() => handleImage(category)} alt="Images"><span><FontAwesomeIcon icon="eye" /></span></button>
+                      <button onClick={() => handleTitle(category)} alt="Titles"><span><FontAwesomeIcon icon="font" /></span></button>
                   </div>
                 ))}  
             </div>

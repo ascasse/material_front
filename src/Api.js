@@ -10,7 +10,8 @@ const API = {
     recent: `${api_url}/recent`,
     updateBatch: `${api_url}/updatebatch`,
 
-    batchImages: '/batch-images'
+    batchImages: '/batch-images',
+    batchTitles: '/batch-titles'
 }
 
 export default API

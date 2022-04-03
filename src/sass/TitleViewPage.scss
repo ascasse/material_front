@@ -1,0 +1,14 @@
+main .titleViewPage {
+    .container {
+        height: 100vh;
+        display: grid;
+        grid-template-rows: auto;
+        justify-items: center;
+        align-items: center;        
+    }
+
+    .container span {
+        font-size: 18vw;
+        font-family: Roboto;
+    }
+}
