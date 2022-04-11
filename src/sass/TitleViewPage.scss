@@ -1,3 +1,12 @@
+// These values are the minimum and maximum viewport sizes to apply the font scaling
+$min_width: 600;
+$max_width: 1080;
+
+// These values represent the range of font-size to apply
+$min_font: 100;
+$max_font: 200; 
+
+
 main .titleViewPage {
     .container {
         height: 100vh;
@@ -8,7 +17,19 @@ main .titleViewPage {
     }
 
     .container span {
-        font-size: 18vw;
+        font-size: #{$min_font}px;
         font-family: Roboto;
+    }
+}
+
+// This part is a little bit ugly, I will explain what is going on in a blog post soon.
+@media (min-width: #{$min_width}px) and (max-width: #{$max_width}px){
+  .titleViewPage.container span { 
+    font-size: calc( #{$min_font}px + (#{$max_font} - #{$min_font}) * ( (100vw - #{$min_width}px) / ( #{$max_width} - #{$min_width}) ));
+  }
+}
+@media (min-width: #{$max_width}px){
+  .titleViewPage.container span { 
+      font-size: #{$max_font}px;
     }
 }
