@@ -18,18 +18,12 @@ const ImageViewPage = ({ batch1 }) => {
   const navigate = useNavigate();
 
   var shuffled = fisherYates(batch.Items);
-  // var shuffled = batch.Items
-  //     .map(a => [Math.random(), a])
-  //     .sort((a, b) => a[0] -b[0])
-  //     .map(a => a[1])
 
   const handleClick = () => {
     if (active >= 0 && active + 1 < batch.Items.length) {
       setActive(active + 1)
     } else {
-      // screenfull.exit()
       setActive(-1)
-      // setShowHeader(true)
     }
   }
 
@@ -60,18 +54,8 @@ const ImageViewPage = ({ batch1 }) => {
         </div>
       </div>
     ) : (
-      <main className="imageViewPage">
+      <main className="imageViewPage" onClick={handleClick}>
         <BitImage image={shuffled[active]}></BitImage>
-        {/* <div className="container" id={"div_" + shuffled[active].Id}>
-          <h2>{shuffled[active].Text}</h2>
-          <img
-            id={shuffled[active].id}
-            src={API.image + shuffled[active].Id}
-            title={shuffled[active].Text}
-            onClick={handleClick}
-            alt=""
-          />
-        </div> */}
       </main>
     )
 
