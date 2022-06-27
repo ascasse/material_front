@@ -5,6 +5,7 @@ import axios from "axios";
 import API from "../Api";
 import { FrontRoutes } from "../AppRoutes";
 import { fisherYates } from "../service";
+import { BitTitle } from "../components/BitTitle";
 import '../css/TitleViewPage.css'
 
 const TitleViewPage = ({ batch1 }) => {
@@ -51,10 +52,8 @@ const TitleViewPage = ({ batch1 }) => {
         </div>
       </div>
     ) : (
-      <main class="titleViewPage" onClick={handleClick}>
-        <div className="container" id={"div_" + shuffled[active].Id}>
-          <span>{shuffled[active].Text}</span>
-        </div>
+      <main className="titleViewPage" onClick={handleClick}>
+        <BitTitle text={shuffled[active]} />
       </main>
     )
 

@@ -6,7 +6,6 @@ import API from "../Api";
 import { FrontRoutes } from "../AppRoutes";
 import { fisherYates } from "../service";
 import { BitImage } from "../components/BitImage";
-import '../css/ImageViewPage.css'
 
 
 const ImageViewPage = ({ batch1 }) => {
