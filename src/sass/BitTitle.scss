@@ -4,7 +4,7 @@ $max_width: 1500;
 
 // These values represent the range of font-size to apply
 $min_font: 50;
-$max_font: 100; 
+$max_font: 200; 
 
 
 .BitTitle {
@@ -13,11 +13,12 @@ $max_font: 100;
     grid-template-rows: auto;
     justify-items: center;
     align-items: center;
-    color: rebeccapurple;        
+    color: midnightblue;
 
     span {
         font-size: #{$min_font}px;
         font-family: Roboto;
+        text-align: center;
     }
 }
 

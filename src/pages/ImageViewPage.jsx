@@ -4,7 +4,7 @@ import axios from "axios";
 
 import API from "../Api";
 import { FrontRoutes } from "../AppRoutes";
-import { fisherYates } from "../service";
+// import { fisherYates } from "../service";
 import { BitImage } from "../components/BitImage";
 
 
@@ -16,7 +16,8 @@ const ImageViewPage = ({ batch1 }) => {
   const [active, setActive] = useState(0)
   const navigate = useNavigate();
 
-  var shuffled = fisherYates(batch.Items);
+  // var shuffled = fisherYates(batch.Items);
+  var shuffled = batch.Items
 
   const handleClick = () => {
     if (active >= 0 && active + 1 < batch.Items.length) {
@@ -55,6 +56,7 @@ const ImageViewPage = ({ batch1 }) => {
     ) : (
       <main className="imageViewPage" onClick={handleClick}>
         <BitImage image={shuffled[active]}></BitImage>
+        {/* <BitImage image={shuffled[active]}></BitImage> */}
       </main>
     )
 
