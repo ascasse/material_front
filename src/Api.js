@@ -6,8 +6,9 @@ const api_url = `${url}:${port}`
 console.log(api_url)
 
 const API = {
-    image: `${api_url}/image/`,
-    recent: `${api_url}/recent`,
+    image: `${api_url}/Material/`,
+    // recent: `${api_url}/recent`,
+    recent: `${api_url}/api/batch`,
     updateBatch: `${api_url}/updatebatch`,
 
     batchImages: '/batch-images',

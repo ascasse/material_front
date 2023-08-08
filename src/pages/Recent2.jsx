@@ -49,16 +49,18 @@ const Recent2 = () => {
     return <p>{error.message}</p>;
   } else if (!isLoaded) {
     return <p>loading...</p>;
+  } else if (categories.length === 0) {
+    return <p>Nothing found</p>;
   } else {
     return (
       <main className="recent2">
         <div className="container">
-          {categories.map((category) => (
-            <div className="card" key={category.Id}>
-              <img src={API.image + category.Items[0].Id} alt={category.Name} />
-              <span>{category.Name}</span>
-              <span>Last viewed: {category.LastUse != null ? category.LastUse : 'Never'}</span>
-              <span>Bits: {category.Items.length}</span>
+          {[...categories].map((category) => (
+            <div className="card" key={category.id}>
+              {category.items.length > 0 ? <img src={API.image + category.items[0].image} alt={category.name}/> : ''}
+              <span>{category.name}</span>
+              <span>Last viewed: {category.lastUse !== '0001-01-01T00:00:00' ? category.lastUse : 'Never'}</span>
+              <span>Bits: {category.items.length}</span>
               <button onClick={() => handleImage(category)} alt="Images"><span><FontAwesomeIcon icon="eye" /></span></button>
               <button onClick={() => handleTitle(category)} alt="Titles"><span><FontAwesomeIcon icon="font" /></span></button>
             </div>
