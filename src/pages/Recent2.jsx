@@ -34,14 +34,14 @@ const Recent2 = () => {
 
 
   const handleImage = (category) => {
-    var shuffled = fisherYates(category.Items);
-    category.Items = shuffled;
+    var shuffled = fisherYates(category.items);
+    category.items = shuffled;
     navigate(API.batchImages, { state: { category } });
   }
 
   const handleTitle = (category) => {
-    var shuffled = fisherYates(category.Items);
-    category.Items = shuffled;
+    var shuffled = fisherYates(category.items);
+    category.items = shuffled;
     navigate(API.batchTitles, { state: { category } });
   }
 
@@ -59,10 +59,11 @@ const Recent2 = () => {
             <div className="card" key={category.id}>
               {category.items.length > 0 ? <img src={API.image + category.items[0].image} alt={category.name}/> : ''}
               <span>{category.name}</span>
-              <span>Last viewed: {category.lastUse !== '0001-01-01T00:00:00' ? category.lastUse : 'Never'}</span>
+              <span>Last viewed: {category.lastUse !== '0001-01-01T00:00:00' ? new Date(category.lastUse).toLocaleDateString() : 'Never'}</span>
               <span>Bits: {category.items.length}</span>
               <button onClick={() => handleImage(category)} alt="Images"><span><FontAwesomeIcon icon="eye" /></span></button>
               <button onClick={() => handleTitle(category)} alt="Titles"><span><FontAwesomeIcon icon="font" /></span></button>
+              <button onClick={() => handleTitle(category)} alt="Reset"><span><FontAwesomeIcon icon="redo" /></span></button>
             </div>
           ))}
         </div>

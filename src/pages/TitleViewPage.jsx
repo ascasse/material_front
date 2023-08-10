@@ -16,10 +16,11 @@ const TitleViewPage = ({ batch1 }) => {
   const [active, setActive] = useState(0)
   const navigate = useNavigate();
 
-  var shuffled = fisherYates(batch.Items);
+  // var shuffled = fisherYates(batch.items);
+  var shuffled = batch.items;
 
   const handleClick = () => {
-    if (active >= 0 && active + 1 < batch.Items.length) {
+    if (active >= 0 && active + 1 < batch.items.length) {
       setActive(active + 1)
     } else {
       setActive(-1)
@@ -27,7 +28,7 @@ const TitleViewPage = ({ batch1 }) => {
   }
 
   const handleUpdate = () => {
-    axios.post(API.updateBatch, JSON.stringify(batch), {
+    axios.put(API.updateBatch, JSON.stringify(batch), {
       headers: {
         "Content-Type": "application/json"
       }

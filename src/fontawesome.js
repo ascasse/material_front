@@ -11,6 +11,7 @@ import { faSave } from "@fortawesome/free-solid-svg-icons";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import { faCamera } from "@fortawesome/free-solid-svg-icons";
 import { faPencilAlt } from "@fortawesome/free-solid-svg-icons";
+import { faRedo } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
   faPlusCircle,
@@ -23,5 +24,6 @@ library.add(
   faSave,
   faTimes,
   faCamera,
-  faPencilAlt
+  faPencilAlt,
+  faRedo
 );

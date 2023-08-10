@@ -7,9 +7,8 @@ console.log(api_url)
 
 const API = {
     image: `${api_url}/Material/`,
-    // recent: `${api_url}/recent`,
     recent: `${api_url}/api/batch`,
-    updateBatch: `${api_url}/updatebatch`,
+    updateBatch: `${api_url}/api/batch`,
 
     batchImages: '/batch-images',
     batchTitles: '/batch-titles'
